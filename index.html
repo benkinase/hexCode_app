@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hex_color</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="hex-color">
+        Hex color and name <span class="hexText d-block"> </span>
+      </h2>
+      <button type="button" class="hex-btn">
+        Get color
+      </button>
+    </div>
+
+    <script src="ntc.js"></script>
+
+    <script>
+      const hexArray = [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+      ];
+
+      const button = document.querySelector(".hex-btn");
+      const box = document.querySelector(".container");
+      const hex_color_name = document.querySelector(".hexText");
+
+      button.addEventListener("click", getHex);
+
+      function getHex() {
+        let hexColor = "#";
+
+        for (let i = 0; i < 6; i++) {
+          let random = Math.floor(Math.random() * hexArray.length);
+          //console.log(random);
+          hexColor += hexArray[random];
+          //console.log(hexColor);
+          box.style.backgroundColor = hexColor;
+
+          var ntcMatch = ntc.name(hexColor);
+          hex_color_name.innerHTML = `${hexColor} ~ ${ntcMatch[1]}`;
+          //console.log(ntcMatch);
+        }
+      }
+    </script>
+  </body>
+</html>
+
+<!--
+  var n_match  = ntc.name("hexcode");
+    n_rgb        = n_match[0]; // This is the RGB value of the closest matching color
+    n_name       = n_match[1]; // This is the text string for the name of the match
+    n_exactmatch = n_match[2]; // True if exact color match, False if close-match
+
+-->
