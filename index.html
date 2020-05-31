@@ -15,9 +15,9 @@
   <body>
     <div class="container">
       <h2 class="hex-color">
-        Hex color and name <span class="hexText d-block"> </span>
+        Hex color ~ name <span class="hexText d-block"> </span>
       </h2>
-      <button type="button" class="hex-btn">
+      <button type="button" id="hex-btn">
         Get color
       </button>
     </div>
@@ -44,7 +44,7 @@
         "F",
       ];
 
-      const button = document.querySelector(".hex-btn");
+      const button = document.getElementById("hex-btn");
       const box = document.querySelector(".container");
       const hex_color_name = document.querySelector(".hexText");
 

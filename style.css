@@ -20,21 +20,23 @@ body {
 
 .hexText {
   font-size: 2.5rem;
+  margin-top: -6rem;
 }
 
-.hex-btn {
+#hex-btn {
   position: absolute;
-  margin-top: 5rem;
+  margin-top: 5.5rem;
   padding: 1.2rem;
   font-size: 1.5rem;
-  border: none;
+  border: 0.3px;
   border-radius: 0.7rem;
   background-color: lightblue;
   outline: none;
+  appearance: none;
   transition: all 1s ease;
 }
 
-.hex-btn:hover {
+#hex-btn:hover {
   background-color: rgb(55, 80, 30);
   color: white;
 }
